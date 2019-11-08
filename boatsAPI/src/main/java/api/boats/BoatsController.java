@@ -50,13 +50,13 @@ public class BoatsController {
 
 	// testowe
 	@GetMapping(value = "/")
-	private ResponseEntity<String> testOK() {
+	public ResponseEntity<String> testOK() {
 		return ResponseEntity.ok(new String());
 	}
 
 	// POST - tworzenie lodzi danego typu -> 201
 	// w body text/plain z wybranym z enuma (Boat.Type) typem lodzi
-	// np. curl -X POST http://ip:port/boats -H "Content-type: text/plain" -d
+	// np. poprzez curl -X POST http://ip:port/boats -H "Content-type: text/plain" -d
 	// "kajak"
 	@PostMapping(value = "/boats", consumes = "text/plain")
 	public ResponseEntity<?> addBoat(@RequestBody String type) {

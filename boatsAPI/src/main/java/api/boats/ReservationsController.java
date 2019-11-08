@@ -26,7 +26,7 @@ public class ReservationsController {
 			return Boolean.FALSE;
 		}
 	}
-
+	// lista rezerwacji
 	private static ArrayList<Reservation> reservations = new ArrayList<Reservation>();
 
 	static void addReservation(Reservation reservation) {
@@ -96,7 +96,7 @@ public class ReservationsController {
 	/*
 	 * POST - Tworzenie nowej rezerwacji dla wybranej łodzi szablon:
 	 * "idLodzi;startDate;endDate;clientPESEL" data jako string w formacie:
-	 * dd/MM/yyyy dodana obsługa wyjątków w celu
+	 * dd/MM/yyyy
 	 */
 	@PostMapping(value = "/reservations", consumes = "text/plain")
 	ResponseEntity<?> newReservationCreation(@RequestBody String input) {
